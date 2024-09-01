@@ -1,0 +1,86 @@
+.skill-container {
+  display: flex;
+  padding: 3rem;
+  gap: 4rem;
+}
+
+.skill-lhs,
+.skill-rhs {
+  flex: 1;
+  position: relative;
+}
+
+.skill-lhs {
+  animation: fade-in-left forwards;
+  animation-timeline: view(-250px);
+  left: -100px;
+  animation-range: -400px contain;
+  opacity: 0;
+}
+
+.skill-content {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.skill-content label {
+  background-color: rgb(222, 222, 222);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+progress {
+  width: 0%;
+  padding: 1rem;
+  margin-block: 0.5rem;
+  animation: progress 2s linear forwards;
+  animation-timeline: view(200px -800px);
+}
+
+@keyframes progress {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fade-in-left {
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.skill-rhs {
+  animation: fade-in-right forwards;
+  animation-timeline: view();
+  animation-range: -400px contain;
+  right: -100px;
+  opacity: 0;
+}
+
+@keyframes fade-in-right {
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .skill-container {
+    flex-direction: column;
+  }
+
+  .skill-content{
+    gap: 1;
+  }
+
+  .skill-lhs label {
+    padding: .5rem;
+  }
+}
